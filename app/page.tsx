@@ -77,7 +77,7 @@ const CardImage = ({ }: {}) => {
   }
 
   return (
-    <div className="w-full max-w-sm md:max-w-md h-[300px] md:h-[500px] flex items-center justify-center">
+    <div className="w-full max-w-sm md:max-w-md min-h-[500px] flex items-center justify-center">
       {imageLoading ? (
         <div className="flex flex-col items-center justify-center bg-background font-mono w-full h-full">
           <div className="text-accent text-xs mb-2">[LOADING]</div>
