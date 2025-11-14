@@ -17,17 +17,17 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main className="flex flex-col items-center justify-center p-3 md:flex-1 md:p-2">
-        {/* Card - Mobile only */}
+      <main className="flex flex-col items-center justify-center p-3 md:flex-1 md:p-2 gap-6">
+        {/* Card */}
         <CardImage />
-        <div className="text-xl md:text-2xl font-mono tracking-wider text-accent mt-10">
+        <div className="text-xl md:text-2xl font-mono tracking-wider text-accent">
           coming soon...<span className="terminal-cursor ml-1">_</span>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="flex flex-col gap-2 p-4 bg-background items-center justify-center text-base text-muted-foreground">
-        <p className=" ">v1.0.0 | Build 2025 | Open Source Edition | Made with ❤️ by <a href="https://cardsonchain.com" className="text-accent hover:underline">CardsonChain </a></p>
+      <footer className="flex flex-col gap-2 p-4 bg-background items-center justify-center text-sm text-muted-foreground">
+        <p className="text-center">v1.0.0 | Build 2025 | Open Source Edition | Made with ❤️ by <a href="https://cardsonchain.com" className="text-accent hover:underline">CardsonChain </a></p>
       </footer>
     </div>
   );
@@ -77,9 +77,9 @@ const CardImage = ({ }: {}) => {
   }
 
   return (
-    <div className={cn("block md:col-span-1 max-h-[500px] relative")}>
+    <div className="w-full max-w-sm md:max-w-md h-[300px] md:h-[500px] flex items-center justify-center">
       {imageLoading ? (
-        <div className="flex flex-col items-center justify-center bg-background font-mono h-full">
+        <div className="flex flex-col items-center justify-center bg-background font-mono w-full h-full">
           <div className="text-accent text-xs mb-2">[LOADING]</div>
           <TeminalLine text="Decoding card data..." />
           <div className="mt-2 w-32 h-1 bg-primary/20 rounded-full overflow-hidden">
@@ -90,7 +90,7 @@ const CardImage = ({ }: {}) => {
         <img
           src={card.image || "/placeholder.svg"}
           alt={card.name}
-          className="w-full h-full object-contain"
+          className="max-w-full max-h-full w-auto h-auto object-contain"
           onLoad={handleImageLoad}
           onLoadStart={handleImageLoadStart}
         />
